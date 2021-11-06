@@ -65,10 +65,9 @@ export default class Navbar extends Component {
             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
               <div className="flex-shrink-0 flex items-center">
                 <img
-                  className="block lg:hidden h-8 w-auto"
+                  className="block lg:hidden h-8 w-auto h-8 w-8 rounded-full"
                   src="https://i.pravatar.cc/600"
-                  className="h-8 w-8 rounded-full"
-                  // alt="Tambal Ban Online"
+                  alt="Tambal Ban Online"
                 />
               </div>
               <div className="hidden sm:block sm:ml-6">
@@ -160,7 +159,7 @@ export default class Navbar extends Component {
                   tabindex="-1"
                 >
                   <a
-                    href="#"
+                    href="/"
                     className="block px-4 py-2 text-sm text-gray-700"
                     role="menuitem"
                     tabindex="-1"
@@ -169,7 +168,7 @@ export default class Navbar extends Component {
                     Your Profile
                   </a>
                   <a
-                    href="#"
+                    href="/"
                     className="block px-4 py-2 text-sm text-gray-700"
                     role="menuitem"
                     tabindex="-1"
@@ -178,7 +177,7 @@ export default class Navbar extends Component {
                     Settings
                   </a>
                   <a
-                    href="#"
+                    href="/"
                     className="block px-4 py-2 text-sm text-gray-700"
                     role="menuitem"
                     tabindex="-1"
@@ -196,7 +195,7 @@ export default class Navbar extends Component {
           <div className="px-2 pt-2 pb-3 space-y-1">
             {menu.map((v, i) => (
               <a
-                href="#"
+                href="/"
                 className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
                 aria-current="page"
               >
