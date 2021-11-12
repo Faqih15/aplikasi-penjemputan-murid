@@ -5,6 +5,8 @@ import Penjemput from "./Penjemput";
 import Guru from "./Guru";
 import History from "./History";
 import Daftar from "./Daftar";
+import Alldata from "./Alldata";
+import Daftarun from "./Daftarun";
 
 export default class App extends Component {
   render() {
@@ -22,6 +24,12 @@ export default class App extends Component {
           </Route>
           <Route exact path="/History">
             <History />
+          </Route>
+          <Route exact path="/Alldata">
+            <Alldata />
+          </Route>
+          <Route exact path="/Dguru">
+            <Daftarun />
           </Route>
         </Switch>
       </Router>
