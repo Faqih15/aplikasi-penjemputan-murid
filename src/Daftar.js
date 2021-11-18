@@ -7,7 +7,7 @@ export default class Daftar extends Component {
     return (
       <>
         <Navbar />
-
+        <h3>Silakan Daftarkan Murid Di Sini</h3>
         <Mr />
       </>
     );
@@ -74,7 +74,7 @@ class Mr extends Component {
               value={this.state.nama}
             />
           </div>
-          <div className="w-full md:w-1/2 px-5">
+          <div className="w-full px-5">
             <label
               className="block uppercase tracking-wide text-black text-xs font-bold mb-2"
               htmlFor="grid-last-name"
@@ -82,7 +82,7 @@ class Mr extends Component {
               Kode Siswa
             </label>
             <input
-              className="appearance-none block bg-white text-black border border-red-500 rounded py-3 px-3 w-50 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="w-full appearance-none block bg-white text-black border border-red-500 rounded py-3 px-3 w-50 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-last-name"
               name="kode"
               type="number"
@@ -94,7 +94,7 @@ class Mr extends Component {
               value={this.state.kode}
             />
           </div>
-          <div className="w-full md:w-1/2 px-5 mt-3">
+          <div className="w-full px-5 mt-3">
             <label
               className="whitespace-nowrap block uppercase tracking-wide text-black text-xs font-bold mb-2"
               htmlFor="grid-last-name"
@@ -102,17 +102,19 @@ class Mr extends Component {
               No Hp Penjemput 1
             </label>
             <input
-              className="appearance-none block bg-white text-black border border-red-500 rounded py-3 px-3 w-50 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="w-full appearance-none block bg-white text-black border border-red-500 rounded py-3 px-3 w-50 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-last-name"
               name="jemput1"
               type="number"
               placeholder="Ketik Kode Siswa"
               autoComplete="off"
+              min="10000000"
+              max="99999999"
               onChange={(e) => this.setState({ jemput1: e.target.value })}
               value={this.state.jemput1}
             />
           </div>
-          <div className="w-full md:w-1/2 px-5 mt-3">
+          <div className="w-full px-5 mt-3">
             <label
               className="whitespace-nowrap block uppercase tracking-wide text-black text-xs font-bold mb-2"
               htmlFor="grid-last-name"
@@ -120,17 +122,19 @@ class Mr extends Component {
               No Hp Penjemput 2
             </label>
             <input
-              className="appearance-none block bg-white text-black border border-red-500 rounded py-3 px-3 w-50 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="w-full appearance-none block bg-white text-black border border-red-500 rounded py-3 px-3 w-50 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-last-name"
               name="jemput2"
               type="number"
               placeholder="Ketik Kode Siswa"
               autoComplete="off"
+              min="10000000"
+              max="99999999"
               onChange={(e) => this.setState({ jemput2: e.target.value })}
               value={this.state.jemput2}
             />
           </div>
-          <div className="w-full md:w-1/2 px-5 mt-3">
+          <div className="w-full px-5 mt-3">
             <label
               className="whitespace-nowrap block uppercase tracking-wide text-black text-xs font-bold mb-2"
               htmlFor="grid-last-name"
@@ -138,18 +142,20 @@ class Mr extends Component {
               No Hp Penjemput 3
             </label>
             <input
-              className="appearance-none block bg-white text-black border border-red-500 rounded py-3 px-3 w-50 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="w-full appearance-none block bg-white text-black border border-red-500 rounded py-3 px-3 w-50 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-last-name"
               name="jemput3"
               type="number"
               placeholder="Ketik Kode Siswa"
               autoComplete="off"
+              min="10000000"
+              max="99999999"
               onChange={(e) => this.setState({ jemput3: e.target.value })}
               value={this.state.jemput3}
             />
           </div>
 
-          <div className="w-full md:w-1/2 px-5 mt-6">
+          <div className="md:w-1/2 px-5 mt-6">
             <button
               type="submit"
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
@@ -158,7 +164,7 @@ class Mr extends Component {
             </button>
           </div>
         </div>
-        <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+        <div className="md:w-1/3 px-3 mb-6 md:mb-0">
           <label
             className="block uppercase tracking-wide text-black text-xs font-bold mb-2"
             htmlFor="grid-state"
@@ -170,7 +176,6 @@ class Mr extends Component {
               className="block appearance-none bg-white border border-gray-200 text-black py-3 px-3 pr-9 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-state"
               name="kelas"
-              value={this.state.kelas}
             >
               <option>Kelas 1</option>
               <option>Kelas 2</option>

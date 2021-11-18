@@ -8,6 +8,7 @@
 -kode
 -nama guru
 -kelas
+-no hp guru
 
 3. History
 -kode
@@ -24,4 +25,3 @@ Logika
 -jika nomor hp terdaftar maka buat history baru dengan status queue, 
 -ketika ada history queue tampilkan nama siswa di halaman guru
 -setelah guru mengantar siswa ubah status jadi done
-

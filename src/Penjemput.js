@@ -7,8 +7,9 @@ export default class Penjemput extends Component {
       <>
         <Navbar />
         <h3>Welcome To Halaman Penjemput</h3>
-        <form class="w-full max-w-lg">
-          <div class="flex flex-wrap -mx-3 mb-6">
+
+        <form class="w-full max-w-lg mt-4 bg-gray-300">
+          <div class="flex flex-wrap -mx-3 mb-4">
             <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
               <label
                 class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -17,7 +18,7 @@ export default class Penjemput extends Component {
                 No Hp Penjemput
               </label>
               <input
-                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                className="appearance-none block bg-white text-black border border-red-500 rounded py-3 px-3 w-50 mb-3 leading-tight focus:outline-none focus:bg-white"
                 id="grid-first-name"
                 type="number"
                 placeholder="Ketik No Hp Penjemput"
@@ -25,72 +26,23 @@ export default class Penjemput extends Component {
               />
             </div>
           </div>
-          <div class="flex flex-wrap -mx-3 mb-6">
-            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-              <label
-                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                for="grid-first-name"
-              >
-                Nama Siswa
-              </label>
-              <input
-                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                id="grid-first-name"
-                type="text"
-                placeholder="Ketik Nama Siswa"
-                autoComplete="off"
-              />
-            </div>
-            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-              <label
-                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                for="grid-state"
-              >
-                Kelas
-              </label>
-              <div class="relative">
-                <select
-                  class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  id="grid-state"
-                >
-                  <option>Kelas 1</option>
-                  <option>Kelas 2</option>
-                  <option>Kelas 3</option>
-                  <option>Kelas 4</option>
-                  <option>Kelas 5</option>
-                  <option>Kelas 6</option>
-                </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                  <svg
-                    class="fill-current h-4 w-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="w-full md:w-1/2 px-3">
-              <label
-                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                for="grid-last-name"
-              >
-                Kode Siswa
-              </label>
-              <input
-                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-last-name"
-                type="number"
-                placeholder="Ketik Kode Siswa"
-                autoComplete="off"
-              />
-            </div>
-          </div>
           <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Konfirmasi Penjemputan
+            Confirm
           </button>
         </form>
+        <h4>
+          Logika
+          <br />
+          -ketika penjemput datang melakukan scan barcode
+          <br />
+          -ketika scan barcode cek apakah nomor hp penjemput terdaftar
+          <br />
+          -jika nomor hp terdaftar maka buat history baru dengan status queue
+          <br />
+          -ketika ada history queue tampilkan nama siswa di halaman guru
+          <br />
+          -setelah guru mengantar siswa ubah status jadi done
+        </h4>
       </>
     );
   }
