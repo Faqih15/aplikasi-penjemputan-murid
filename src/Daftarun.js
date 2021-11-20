@@ -6,7 +6,9 @@ export default class Daftarun extends Component {
     return (
       <div>
         <Navbar />
-        <h3>Silakan Daftarkan Data Guru Di Sini</h3>
+        <div className="text-xs md:text-lg mx-4 md:mx-5">
+          Silakan Daftarkan Guru Di Sini
+        </div>
         <Gr />
       </div>
     );
@@ -45,11 +47,11 @@ class Gr extends Component {
   render() {
     return (
       <form
-        className="flex -mx-3 mt-5 mb-10 w-2/3 bg-gray-300"
+        className="flex w-full md:w-2/3 -mx-3 mt-5 mb-10 bg-gray-300"
         onSubmit={(e) => this.onsubmit(e)}
       >
         <div>
-          <div className="md:w-1/2 px-5 mb-6 md:mb-0">
+          <div className="px-5 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-black text-xs font-bold mb-2"
               htmlFor="grid-first-name"
@@ -57,7 +59,7 @@ class Gr extends Component {
               Nama Guru
             </label>
             <input
-              className="appearance-none block bg-white text-black border border-red-500 rounded py-3 px-3 w-50 mb-3 leading-tight focus:outline-none focus:bg-white"
+              className="w-56 md:w-64 appearance-none block bg-white text-black border border-red-500 rounded py-3 px-3 w-50 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="grid-full-name"
               type="text"
               placeholder="Ketik Nama Guru"
@@ -75,7 +77,7 @@ class Gr extends Component {
               Kode Guru
             </label>
             <input
-              className="appearance-none block bg-white text-black border border-red-500 rounded py-3 px-3 w-50 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="w-56 md:w-64 appearance-none block bg-white text-black border border-red-500 rounded py-3 px-3 w-50 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-last-name"
               type="number"
               placeholder="Ketik Kode Guru"
@@ -93,7 +95,7 @@ class Gr extends Component {
               No Hp Guru
             </label>
             <input
-              className="w-full appearance-none block bg-white text-black border border-red-500 rounded py-3 px-3 w-50 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="w-56 md:w-64 appearance-none block bg-white text-black border border-red-500 rounded py-3 px-3 w-50 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-last-name"
               type="number"
               placeholder="Ketik No Hp Guru"
