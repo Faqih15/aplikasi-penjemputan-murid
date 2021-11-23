@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Test } from "./History";
 import Navbar from "./Navbar";
 
 const daftarMurid = [
@@ -13,12 +14,27 @@ export default class Penjemput extends Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    const history = {
-      name: this.state.murid?.name,
-      penjemput: e.target.penjemput.value,
-    };
-    console.log("history", history);
+    const inputed = e.target.nomor.value;
+    const allData = JSON.parse(localStorage.getItem("muridun"));
+    const data = this.state.murid;
+    var hasil = allData.find(
+      (q) =>
+        q.jemput1 === inputed || q.jemput2 === inputed || q.jemput3 === inputed
+    );
+    const allguru = JSON.parse(localStorage.getItem("gurunda"));
+    var guru = allguru.find((p) => p.kelas === hasil.kelas);
+    console.log(guru);
+    const history = JSON.parse(localStorage.getItem("history"));
+    if (hasil) {
+      history.push({ ...hasil, guru: guru.guru, status: "queue" });
+    }
+    localStorage.setItem("history", JSON.stringify(history));
+    console.log(hasil);
+
+    // dari alldata, find yang penjemput samadengan inputed
+    // kalau sudah ketemu, masukkan ke dalam localstorage history
   };
+  componentDidMount;
   render() {
     return (
       <>
@@ -37,17 +53,17 @@ export default class Penjemput extends Component {
               >
                 No Hp Penjemput
               </label>
-              {/* <input
-
+              <input
+                name="nomor"
                 className="w-full appearance-none block bg-white text-black border border-red-500 rounded py-3 px-3 w-50 mb-3 leading-tight focus:outline-none focus:bg-white"
                 id="grid-first-name"
-                type="number"
-                min="10000000"
-                max="99999999"
+                // type="number"
+                // min="10000000"
+                // max="99999999"
                 placeholder="Ketik No Hp Penjemput"
                 autoComplete="off"
-              /> */}
-              <div>
+              />
+              {/* <div>
                 <select
                   onChange={(e) => {
                     const [murid] = daftarMurid.filter(
@@ -64,19 +80,25 @@ export default class Penjemput extends Component {
                 </select>
               </div>
               <select name="penjemput">
-                <option>////// </option>
-                {this.state.murid.penjemput?.map((v) => (
-                  <option>{v.nmr}</option>
+              <option>////// </option>
+              {this.state.murid.penjemput?.map((v) => (
+                <option>{v.nmr}</option>
                 ))}
-              </select>
+              </select> */}
             </div>
           </div>
           <div class="px-3 mb-6">
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button
+              type="submit"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            >
               Confirm
             </button>
           </div>
         </form>
+        {/* <div className="flex flex-row w-full place-content-center items-center align-middle">
+          <Test />
+        </div> */}
         <h4>
           Logika
           <br />

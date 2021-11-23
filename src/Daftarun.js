@@ -24,6 +24,7 @@ class Gr extends Component {
   };
 
   onsubmit = (event) => {
+  console.log()
     event.preventDefault();
     const { guru, induk, nohp, kelas } = event.target;
     const data1 = {
