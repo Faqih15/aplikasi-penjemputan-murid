@@ -1,3 +1,4 @@
+import QrReader from "react-qr-scanner";
 import React, { Component } from "react";
 import Navbar from "./Navbar";
 
@@ -14,34 +15,115 @@ export default class History extends Component {
 }
 
 class Tabelsatu extends Component {
+  state = {
+    asd: JSON.parse(localStorage.getItem("history")) || [],
+  };
+
   render() {
     return (
       <div>
-        <table class="w-1/2 table-fixed border-collapse border border-black">
+        <table class="table-fixed border-collapse border border-black">
           <thead>
             <tr>
-              <th class="w-1/3 table-fixed border border-black">Tgl</th>
-              <th class="w-1/3 table-fixed border border-black">Nama Siswa</th>
-              <th class="w-1/4 table-fixed border border-black">Kode</th>
-              <th class="w-1/4 table-fixed border border-black">Kelas</th>
-              <th class="w-1/3 table-fixed border border-black">Penjemput</th>
-              <th class="w-1/4 table-fixed border border-black">Guru</th>
-              <th class="w-1/4 table-fixed border border-black">status</th>
+              <th class="table-fixed border px-3 whitespace-nowrap border-black">
+                Nama Siswa
+              </th>
+              <th class="table-fixed border px-3 whitespace-nowrap border-black">
+                Kode
+              </th>
+              <th class="table-fixed border px-3 whitespace-nowrap border-black">
+                Kelas
+              </th>
+              <th class="table-fixed border px-3 whitespace-nowrap border-black">
+                Penjemput
+              </th>
+              <th class="table-fixed border px-3 whitespace-nowrap border-black">
+                Guru
+              </th>
+              <th class="table-fixed border px-3 whitespace-nowrap border-black">
+                status
+              </th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td class="table-fixed border border-black">Doni</td>
-              <td class="table-fixed border border-black">32001</td>
-              <td class="table-fixed border border-black">1</td>
-              <td class="table-fixed border border-black">6</td>
-              <td class="table-fixed border border-black">133</td>
-              <td class="table-fixed border border-black">144</td>
-              <td class="table-fixed border border-black">155</td>
-            </tr>
+            {this.state.asd.map((x, y) => (
+              <tr>
+                <td class="table-fixed border px-3 whitespace-nowrap border-black">
+                  {x.nama}
+                </td>
+                <td class="table-fixed border px-3 whitespace-nowrap border-black">
+                  {x.kode}
+                </td>
+                <td class="table-fixed border px-3 whitespace-nowrap border-black">
+                  {x.kelas}
+                </td>
+                <td class="table-fixed border px-3 whitespace-nowrap border-black">
+                  {x.jemput1}
+                </td>
+                <td class="table-fixed border px-3 whitespace-nowrap border-black">
+                  {x.guru}
+                </td>
+                <td class="table-fixed border px-3 whitespace-nowrap border-black">
+                  {x.status}
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
     );
   }
 }
+
+// export class Test extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       delay: 10000,
+//       result: null,
+//     };
+
+//     this.handleScan = this.handleScan.bind(this);
+//   }
+//   handleScan(data) {
+//     this.setState({
+//       result: data,
+//     });
+//     console.log(data);
+//   }
+//   handleError(err) {
+//     console.error(err);
+//   }
+// componentDidMount(){
+//   this.setState({result:"as"})
+// }
+//   render() {
+//     const previewStyle = {
+//       height: 240,
+//       width: 320,
+//     };
+
+//     return !this.state.result ? (
+//       <div>
+//         <QrReader
+//           delay={this.state.delay}
+//           style={previewStyle}
+//           onError={this.handleError}
+//           onScan={this.handleScan}
+//         />
+//       </div>
+//     ) : (
+//       <div
+//         style={{ height: 240, width: 320 }}
+//         className="border border-black flex flex-col place-content-center items-center align-middle"
+//       >
+//         <button
+//           onClick={() => this.setState({ result: null })}
+//           className="px-3 py-2 bg-red-500 hover:bg-yellow-500 text-white"
+//         >
+//           SCAN QR
+//         </button>
+//       </div>
+//     );
+//   }
+// }
